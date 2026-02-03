@@ -1,0 +1,186 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1650&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e5e7eb;
+    position: relative;
+    min-height: 100%;
+}
+
+/* Dark overlay for readable text */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(2,6,23,0.55);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    background: #020617;
+    z-index: 3;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e5e7eb;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.logo {
+    color: #38bdf8;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Ensure main content sits above the overlay */
+.hero, .section, .card, footer {
+    position: relative;
+    z-index: 1;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #38bdf8;
+    color: #020617;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Sections */
+.section {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.skills span {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid #38bdf8;
+    border-radius: 20px;
+}
+
+/* Projects */
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #020617;
+    padding: 30px;
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #020617;
+}
+
+/* Tabs (Projects / Achievements / Experiences) */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.tab-button {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: inherit;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-button:hover {
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: rgba(56,189,248,0.12);
+    border-color: #38bdf8;
+    color: #38bdf8;
+}
+
+.tab-contents {
+    margin-top: 30px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .tabs {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
